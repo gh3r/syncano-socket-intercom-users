@@ -1,0 +1,82 @@
+name: intercom-users
+version: 0.0.1
+description: Syncano-Intercom integration socket for users managment
+
+config:
+  ACCESS_TOKEN:
+    description: Intercom Access Token
+    required: true
+
+endpoints:
+  create:
+    file: scripts/usersCreate.js
+    parameters:
+      userInfo:
+        type: string
+        example: '{ "email":  "example@email.com" }'
+  update:
+    file: scripts/usersUpdate.js
+    parameters:
+      email:
+        type: string
+        example: "example@email.com"
+      customAttributes:
+        type: string
+        example: '{ "invited_friend": true }'
+  delete:
+    file: scripts/usersDelete.js
+    parameters:
+      id:
+        type: string
+        example: "58da64160b96689370700d3d"
+  list:
+    file: scripts/usersList.js
+  listBy:
+    file: scripts/usersListBy.js
+    parameters:
+      listParam:
+        type: string
+        example: '{ "tag_id": 957050 }'
+  find:
+    file: scripts/usersFind.js
+    parameters:
+      searchParam:
+        type: string
+        example: '{ "email": "example@email.com" }'
+
+classes:
+  event_history:
+    -
+      name: eventName
+      type: string
+    -
+      name: message
+      type: object
+
+event_handlers:
+  events.intercom-create-new-user:
+    file: scripts/usersCreate.js
+    parameters:
+      userInfo:
+        type: string
+  events.intercom-user-created:
+    file: scripts/saveEvent.js
+    parameters:
+      eventName:
+        type: string
+      message:
+        type: object
+  events.intercom-user-updated:
+    file: scripts/saveEvent.js
+    parameters:
+      eventName:
+        type: string
+      message:
+        type: object
+  events.intercom-user-deleted:
+    file: scripts/saveEvent.js
+    parameters:
+      eventName:
+        type: string
+      message:
+        type: object

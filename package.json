@@ -1,0 +1,18 @@
+{
+  "name": "syncano-socket-intercom-users",
+  "description": "Syncano-Intercom integration socket for users managment",
+  "version": "0.0.1",
+  "author": "Marcin Godlewski",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gh3r/syncano-socket-intercom-users"
+  },
+  "bugs": {
+    "url": "https://github.com/gh3r/syncano-socket-intercom-users/issues"
+  },
+  "dependencies": {
+    "intercom-client": "2.8.7",
+    "syncano-server": "0.7.2-40"
+  }
+}
