@@ -2,11 +2,9 @@ import { response } from 'syncano-server';
 
 import connector from '../utils/connector';
 
-const { searchParam } = ARGS;
-
 connector
   .users
-  .find(JSON.parse(searchParam))
+  .find(ARGS.searchParam)
   .then(res => {
     response(JSON.stringify(res), res.statusCode || 200, 'application/json');
   })
