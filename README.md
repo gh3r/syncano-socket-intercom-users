@@ -2,19 +2,14 @@
 [![license](https://img.shields.io/github/license/gh3r/syncano-socket-intercom-users.svg)](README.md#License)
 
 
-Syncano-Intercom integration socket responsible for users managing.
+Syncano-Intercom integration socket responsible for managing Intercom users.
 
 
 ## Requirements
 
-Socket is written using [Node](https://nodejs.org).
-While developing version `7.0.0` was used so I recommend also using it.
-
-It comes with [npm](https://www.npmjs.com/) that is required to install project. It should be in `3.10.8` version or higher.
-
-If you want to use multiple version of node I recommend [n](https://github.com/tj/n).
-
-Also accounts on [Intercom](https://www.intercom.com/) and [Syncano](https://www.syncano.io/).
+- Socket was written using version `7.0.0` of [Node](https://nodejs.org) and I recommend to use the same version. It comes with [npm](https://www.npmjs.com/) that is required to install the project. It should be in `3.10.8` version or higher. If you want to use multiple versions of node I recommend [n](https://github.com/tj/n).
+- Account on [Intercom](https://www.intercom.com/)
+- Account on [Syncano](https://www.syncano.io/).
 
 
 ## Endpoints
@@ -32,8 +27,7 @@ For more info check Intercom [node lib docs](https://developers.intercom.com/v2.
 
 ## Events
 
-This socket will react to events that are specified in [socket.yml](socket.yml) file.
-For more info check there.
+This socket will react to events that are specified in [socket.yml](socket.yml) file. Check it out for more info.
 
 #### Emitted
 
@@ -45,26 +39,26 @@ Events emitted by this socket:
 
 #### Handled
 
-This socket will react based on this events:
+This socket will react to these events:
 
   * intercom-create-new-user
 
-And also it will react on his own events:
+It will also react to its own events:
 
   * intercom-user-created
   * intercom-user-updated
   * intercom-user-deleted
 
-To save history in `event_history` data class.
+Event history is saved in the `event_history` data class.
 
 
 ## Config
 
-Before you start using socket, you will need to create new account or use existing one for [Intercom](https://www.intercom.com/).
+Before you start using this socket, you will need to create a new [Intercom](https://www.intercom.com/) account or use an existing one.
 
-Then you will need to create [Access Token](https://developers.intercom.com/v2.0/docs/personal-access-tokens) by visiting [developers console](https://app.intercom.com/developers/_).
+Then, you will need to create an [Access Token](https://developers.intercom.com/v2.0/docs/personal-access-tokens) by visiting [developers console](https://app.intercom.com/developers/_).
 
-After that when you will sync socket with your project, you will be asked for this token like this:
+When syncing a socket with your project, you will be asked for the Access Token, like so:
 
 ```sh
 $ syncano-cli socket sync intercom-users
@@ -72,19 +66,18 @@ $ syncano-cli socket sync intercom-users
 
     Type in value:
 ```
-
-It will only be for the first time, after that you are all set up!
+Once you provide the token, you are all set up!
 
 
 ## Usage
 
-First you will need to sync your socket:
+First, sync your socket:
 
 ```sh
 $ syncano-cli socket sync intercom-users
 ```
 
-After that you can call any of specified [endpoints](README.md#Endpoints) by using CLI like that:
+To test the integration you can call any of the specified [endpoints](README.md#Endpoints) by using the Syncano CLI like this:
 
 ```sh
 $ syncano-cli socket call intercom-users/<endpoint_name>
