@@ -1,5 +1,5 @@
 # syncano-socket-intercom-users
-[![license](https://img.shields.io/github/license/gh3r/syncano-socket-intercom-users.svg)](README.md#License)
+[![license](https://img.shields.io/github/license/gh3r/syncano-socket-intercom-users.svg)](README.md#license)
 
 
 Syncano-Intercom integration socket responsible for managing Intercom users.
@@ -77,7 +77,7 @@ First, sync your socket:
 $ syncano-cli socket sync intercom-users
 ```
 
-To test the integration you can call any of the specified [endpoints](README.md#Endpoints) by using the Syncano CLI like this:
+To test the integration you can call any of the specified [endpoints](README.md#endpoints) by using the Syncano CLI like this:
 
 ```sh
 $ syncano-cli socket call intercom-users/<endpoint_name>

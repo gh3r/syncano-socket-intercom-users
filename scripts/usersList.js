@@ -1,13 +1,8 @@
-import { response } from 'syncano-server';
-
 import connector from '../utils/connector';
+import responder from '../utils/responder';
 
 connector
   .users
   .list()
-  .then(res => {
-    response(JSON.stringify(res), res.statusCode || 200, 'application/json');
-  })
-  .catch(err => {
-    response(JSON.stringify(err), err.statusCode || 400, 'application/json');
-  });
+  .then(res => responder(res))
+  .catch(err => responder(err));
