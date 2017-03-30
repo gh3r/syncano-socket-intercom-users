@@ -9,12 +9,14 @@ config:
 
 endpoints:
   create:
+    description: Creates new user with given object properties
     file: scripts/usersCreate.js
     parameters:
       userInfo:
         type: string
         example: '{ "email":  "example@email.com" }'
   update:
+    description: Updates users with specified email with custom attributes
     file: scripts/usersUpdate.js
     parameters:
       email:
@@ -24,20 +26,24 @@ endpoints:
         type: string
         example: '{ "invited_friend": true }'
   delete:
+    description: Deletes user with specified ID
     file: scripts/usersDelete.js
     parameters:
       id:
         type: string
         example: "58da64160b96689370700d3d"
   list:
+    description: Returns list of all users (paged)
     file: scripts/usersList.js
   listBy:
+    description: Returns list of users by specified filter parameter
     file: scripts/usersListBy.js
     parameters:
       listParam:
         type: string
         example: '{ "tag_id": 957050 }'
   find:
+    description: Searches for user that fulfils search query 
     file: scripts/usersFind.js
     parameters:
       searchParam:
