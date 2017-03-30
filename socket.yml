@@ -13,8 +13,8 @@ endpoints:
     file: scripts/usersCreate.js
     parameters:
       userInfo:
-        type: string
-        example: '{ "email":  "example@email.com" }'
+        type: object
+        example: { "email":  "example@email.com" }
   update:
     description: Updates users with specified email with custom attributes
     file: scripts/usersUpdate.js
@@ -23,8 +23,8 @@ endpoints:
         type: string
         example: "example@email.com"
       customAttributes:
-        type: string
-        example: '{ "invited_friend": true }'
+        type: object
+        example: { "invited_friend": true }
   delete:
     description: Deletes user with specified ID
     file: scripts/usersDelete.js
@@ -40,15 +40,15 @@ endpoints:
     file: scripts/usersListBy.js
     parameters:
       listParam:
-        type: string
-        example: '{ "tag_id": 957050 }'
+        type: object
+        example: { "tag_id": 957050 }
   find:
-    description: Searches for user that fulfils search query 
+    description: Searches for user that fulfils search query
     file: scripts/usersFind.js
     parameters:
       searchParam:
-        type: string
-        example: '{ "email": "example@email.com" }'
+        type: object
+        example: { "email": "example@email.com" }
 
 classes:
   event_history:

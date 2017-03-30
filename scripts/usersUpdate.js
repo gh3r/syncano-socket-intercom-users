@@ -7,7 +7,7 @@ const { email, customAttributes } = ARGS;
 const emmiterName = 'intercom-user-updated';
 const payload = {
   email,
-  custom_attributes: JSON.parse(customAttributes)
+  custom_attributes: customAttributes
 };
 
 connector
