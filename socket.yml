@@ -1,6 +1,8 @@
 name: intercom-users
-version: 0.0.2
+version: 0.0.3
 description: Syncano-Intercom integration socket for users managment
+author:
+  name: Marcin Godlewski
 
 config:
   ACCESS_TOKEN:
